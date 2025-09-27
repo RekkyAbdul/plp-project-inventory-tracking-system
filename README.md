@@ -9,7 +9,6 @@ This project is a **relational database system** designed to manage and track in
 * **Product Management**: Track footwear details such as size, color, category, supplier, and price.
 * **Supplier Management**: Maintain supplier contact details and purchase records.
 * **Customer Management**: Store customer details for sales tracking and reporting.
-* **Employee Management**: Record employee roles related to inventory and sales.
 * **Inventory Control**: Monitor stock levels, reorder points, and restock history.
 * **Sales Orders**: Track customer purchases with detailed order breakdowns.
 * **Purchase Orders**: Manage orders from suppliers to restock inventory.
