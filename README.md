@@ -44,7 +44,7 @@ The system includes the following main tables:
 
 ## 📂 Files in This Project
 
-* `schema.sql` → Database schema with all tables and constraints.
+* `inventory.sql` → Database schema with all tables and constraints.
 * `README.md` → Project documentation and setup guide.
 
 ---
