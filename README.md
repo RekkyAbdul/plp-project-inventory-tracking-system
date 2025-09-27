@@ -1,6 +1,6 @@
 # Footwear Inventory Tracking System 👟
 
-This project is a **relational database system** designed to manage and track inventory for a company that specializes in the sales of **footwears**. It handles products, suppliers, customers, employees, sales, and purchase orders while ensuring **data integrity** using proper database constraints.
+This project is a **relational database system** designed to manage and track inventory for a company that specializes in the sales of **footwears**. It handles products, suppliers, customers, sales, and purchase orders while ensuring **data integrity** using proper database constraints.
 
 ---
 
@@ -21,45 +21,43 @@ This project is a **relational database system** designed to manage and track in
 
 The system includes the following main tables:
 
-1. **Suppliers** – Stores supplier details.
-2. **Products** – Contains footwear details (name, size, color, category, supplier).
-3. **Customers** – Records customer information.
-4. **Employees** – Tracks staff involved in sales and inventory.
-5. **Inventory** – Tracks stock levels, reorder thresholds, and restocks.
-6. **SalesOrders** – Customer purchase records.
-7. **SalesOrderDetails** – Line items of sales (products and quantities).
-8. **PurchaseOrders** – Records of restocks from suppliers.
-9. **PurchaseOrderDetails** – Line items of supplier orders.
+1. **Suppliers** – (SupplierID, SupplierName, ContactName, Phone, Email, Address, City, State, ZipCode).
+2. **Customers** – (CustomerID, CustomerName, Email, Phone, Address, City, State, ZipCode).
+3. **Categories  - (CategoryID, CategoryName, Description).
+4. **Products - (ProductID, ProductName, CategoryID, SupplierID, UnitPrice, QuantityInStock, ReorderLevel)
+5. **Orders - (OrderID, CustomerID, OrderDate, Status).
+6. **OrderItems - (OrderID, ProductID, Quantity, UnitPrice).
+7. **ProductDetails - (ProductID, ShoeSize, Color, Material, Gender).
+8. **InventoryTransactions (TransactionID, ProductID, TransactionDate, Quantity, TransactionType).
 
 ---
 
 ## 🔗 Relationships
 
-* **One-to-Many**:
-
-  * A Supplier → supplies many Products.
-  * A Customer → can place many Sales Orders.
-  * An Employee → can process many Orders.
-
-* **Many-to-Many**:
-
-  * Products ↔ Sales Orders (through **SalesOrderDetails**).
-  * Products ↔ Purchase Orders (through **PurchaseOrderDetails**).
+* **Customers → Orders**: One-to-Many (a customer can place many orders).
+* **Orders → OrderItems**: One-to-Many (an order contains multiple items).
+* **Products → OrderItems**: Many-to-Many (a product can appear in many orders, implemented via OrderItems).
+* **Suppliers → Products**: One-to-Many (a supplier can supply multiple products).
+* **Products → InventoryTransactions**: One-to-Many (a product can have multiple stock movements).
 
 ---
 
-## 📂 Project Structure
+## 📂 Files in This Project
 
-```bash
-📦 footwear-inventory-system
- ┣ 📜 schema.sql                # Database schema (tables + constraints)
- ┣ 📜 footwear_inventory_sample_data.sql   # Sample realistic dataset
- ┣ 📜 README.md                 # Project documentation
-```
+* `schema.sql` → Database schema with all tables and constraints.
+* `README.md` → Project documentation and setup guide.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Future Improvements
+
+* Add **user authentication** for staff members.
+* Create **sales reports** and **low stock alerts**.
+* Build a **web dashboard** for managers.
+* Integrate with **payment systems** for real-time sales.
+
+---
+
 
 ### 1️⃣ Clone Repository
 
