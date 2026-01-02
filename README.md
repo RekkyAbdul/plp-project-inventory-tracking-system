@@ -45,7 +45,7 @@ The system includes the following main tables:
 
 * `inventory.sql` → Database schema with all tables and constraints.
 * `README.md` → Project documentation and setup guide.
-
+* `Database Tables` - images of displayed tables
 ---
 
 ## 🚀 Future Improvements
